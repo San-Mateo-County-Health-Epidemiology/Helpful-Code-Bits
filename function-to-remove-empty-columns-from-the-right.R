@@ -2,6 +2,8 @@
 # author: elizabeth jump
 ## this only removes ONE column. if you want to remove more than one column, you can re-run the function 
 
+library(tidyverse)
+
 remove_last_empty_col <- function(x) {
   empty_last_col <- x %>%
     select(last_col()) %>%
