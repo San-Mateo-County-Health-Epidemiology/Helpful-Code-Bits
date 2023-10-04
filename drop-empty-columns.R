@@ -1,5 +1,4 @@
 # purpose: only keep columns that have data in them ----
-# author: elizabeth jump
 # notes: before you run this, make sure you're importing your tables correctly. A lot of the import functions guess a data type based on the first 200 - 1000 rows, and if those are blank, then the import function will assume the entire column is blank (you can override this in most import functions by making the `guess_max` really high). If you import your data incorrectly, then this code would drop columns that should not be dropped
 
 library(tidyverse)

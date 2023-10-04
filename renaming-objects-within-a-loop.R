@@ -1,5 +1,4 @@
 # creating and renaming objects in a loop
-# elizabeth jump
 # notes: I usually use this when I'm reading in new datasets from a loop, that way I can see which datasets came from which files. 
 
 colors <- c("blue", "green", "yellow", "orange")

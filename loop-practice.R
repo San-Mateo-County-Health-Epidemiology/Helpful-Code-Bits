@@ -1,5 +1,4 @@
 # purpose: practicing basic loops in R ----
-## author: elizabeth jump 
 ## notes: these go over the two main ways to make loops. there are lots of good tutorials on the internet that can help supplement this
 
 # two methods to loop through a list ----

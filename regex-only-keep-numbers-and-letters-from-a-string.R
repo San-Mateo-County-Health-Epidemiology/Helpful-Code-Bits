@@ -1,5 +1,4 @@
 # code to only keep numbers and letters (remove spaces and special characters) ----
-# author: elizabeth jump
 
 library(stringr)
 

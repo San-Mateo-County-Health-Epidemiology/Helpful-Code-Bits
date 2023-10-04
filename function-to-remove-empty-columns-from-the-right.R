@@ -1,5 +1,4 @@
 # purpose: remove the furthest right column if it is empty ----
-# author: elizabeth jump
 ## this only removes ONE column. if you want to remove more than one column, you can re-run the function 
 
 library(tidyverse)

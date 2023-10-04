@@ -1,5 +1,4 @@
 # purpose: to read in and append multiple tabs from the same workbook
-# author: elizabeth jump
 # notes: if you get an excel workbook where each page of data is in the same format, you can use this to read them in and append them into one large dataset
 
 library(readxl)

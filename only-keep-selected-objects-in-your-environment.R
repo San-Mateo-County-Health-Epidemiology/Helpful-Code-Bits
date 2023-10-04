@@ -1,4 +1,3 @@
-# author: beth
 # purpose: keep only specific objects in your environment
 # notes: this code will allow you to delete all objects except the ones you specify. be careful with this because sometimes you end up deleting objects that you didn't realize you wanted to keep
 
