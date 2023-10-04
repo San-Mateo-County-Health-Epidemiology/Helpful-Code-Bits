@@ -1,5 +1,4 @@
 # purpose: only keep rows that have data in certain columns ----
-# author: elizabeth jump
 # notes: if you have a dataset that has empty (or almost entirely empty) rows, you can use this to delete those rows 
 
 library(tidyverse)
