@@ -27,3 +27,21 @@ for(i in groups) {
             paste0("path_group_", i, ".csv"))
   
 }
+
+
+## split data into groups based on species ----
+groups <- iris %>%
+  distinct(Species) %>%
+  pull(Species)
+
+for(i in groups) {
+  
+  print(i)
+  
+  data1 <- iris1 %>%
+    filter(Species == i) 
+  
+  write_csv(data1,
+            paste0("path_group_", i, ".csv"))
+  
+}
