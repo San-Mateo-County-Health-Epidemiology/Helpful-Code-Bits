@@ -2,5 +2,5 @@
 # notes: this isn't exhaustive but is a good start!
 
 data %>%
-  mutate(spec_char = str_detect(val, regex("[^A-Za-z0-9\\s\\.\\,\\%\\?\\/\\-\\'\\(\\)\\&\\;\\:\\#\\*\\_\\\\\\#]"))) %>%
+  mutate(spec_char = str_detect(val, regex("[^A-Za-z0-9\\s\\.\\,\\%\\?\\/\\-\\'\\(\\)\\&\\;\\:\\#\\*\\_\\\\\\#\\•\\~Ñó]"))) %>%
   filter(spec_char == T)
