@@ -13,6 +13,6 @@ trunc((dob %--% end_date) / years(1))
 
 interval(dob, end_date)/years(1)
 
-# note, we had previously recommended using this version, but found it doesn't work well if a person dies on their date of birth and if one of those dates fall in a leap year:
+# note, we had previously recommended using this version, but found it doesn't work well if a person dies on their date of birth and if either of those dates fall in a leap year:
 ## decimal_date: ----
 floor(decimal_date(end_date)-decimal_date(dob))
