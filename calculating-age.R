@@ -4,12 +4,15 @@
 library(tidyverse)
 library(lubridate)
 
-dob <- as.Date("2004-02-29")
-end_date <- as.Date("2016-02-29")
+dob <- as.Date("2003-02-28")
+end_date <- as.Date("2016-02-28")
 
-# two options: ------------------
-## decimal_date: ----
-floor(decimal_date(end_date)-decimal_date(dob))
-
+# best option: ------------------
 ## using lubridate intervals ----
 trunc((dob %--% end_date) / years(1))       
+
+interval(dob, end_date)/years(1)
+
+# note, we had previously recommended using this version, but found it doesn't work well if a person dies on their date of birth and if one of those dates fall in a leap year:
+## decimal_date: ----
+floor(decimal_date(end_date)-decimal_date(dob))
