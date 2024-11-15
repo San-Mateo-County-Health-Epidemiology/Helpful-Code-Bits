@@ -1,3 +1,5 @@
+# **** NOTE: This is now in the smcepi R package in the smc_city_clean() function ***
+
 # code to clean cities
 ## how to use: input a dataset that has a column called "city". "city" should be a string column with names of cities in it
 ## recommendation: from your dataset you want to clean, create a new dataset with just an ID and the city column. Pass that dataset through this fucntion and then join it back to your original dataset. 
