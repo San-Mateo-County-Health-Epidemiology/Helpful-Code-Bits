@@ -1,0 +1,15 @@
+---- DAX code to calculate percentages by category -----
+
+-- 1. calculate the numerator
+numerator = SUM(table[count])
+
+-- 2. calculate denominator
+denominator = CALCULATE(SUM(table[count]),
+                -- here you specify the category for which you want totals: --
+                ALLEXCEPT(table, table[count]),
+                -- here you should add any filters that are on the page or visual: ----
+                FILTER(ALLSELECTED(table[param1]), table[param1] = table[param1]),
+                FILTER(ALLSELECTED(table[param2]), table[param2] = table[param2]))`
+                
+-- 3. calculate percent
+percent = DIVIDE([numerator], [denominator], 0)
