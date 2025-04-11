@@ -1,31 +1,28 @@
 
-## R Markdown
+## Typst
 
-This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. For more details on
-using R Markdown see <http://rmarkdown.rstudio.com>.
+“Typst is a new markup-based typesetting system for the sciences. It is
+designed to be an alternative both to advanced tools like LaTeX and
+simpler tools like Word and Google Docs. Our goal with Typst is to build
+a typesetting tool that is highly capable and a pleasure to use.” -
+[Typst site](https://typst.app/docs/).
 
-When you click the **Knit** button a document will be generated that
-includes both content as well as the output of any embedded R code
-chunks within the document. You can embed an R code chunk like this:
+There is some good documentation out there for Typst, but there isn’t a
+ton about using Quarto with Typst. This is meant to supplement those
+resources with code we find helpful.
 
-``` r
-summary(cars)
-```
+## General things
 
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
+Quarto Typst templates require two files:
 
-## Including Plots
+- `typst-show.typ`: all of the elements that you want in your template
+  need to be referenced in this document. If you add a custom parameter
+  to your `typst-template.typ` and your Quarto yaml, you also need to
+  include it here.
+- `typst-template.typ`: this is where you specify how and where elements
+  appear.
 
-You can also embed plots, for example:
+## Resources
 
-![](README_files/figure-gfm/pressure-1.png)<!-- -->
-
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+[Repo](https://github.com/quarto-ext/typst-templates) of Quarto
+templates built with typst
