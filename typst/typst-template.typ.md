@@ -2,6 +2,18 @@
 Beth Jump
 2025-04-11
 
+- [Overview](#overview)
+- [Document defaults](#document-defaults)
+- [Page settings](#page-settings)
+  - [set page()](#set-page)
+    - [header](#header)
+    - [footer](#footer)
+    - [background](#background)
+  - [placing objects](#placing-objects)
+  - [text](#text)
+    - [headings](#headings)
+    - [body](#body)
+
 ## Overview
 
 The `typst-template.typ` is where most of the formatting is done for
@@ -78,6 +90,10 @@ margins. It is where you set the background of each page. Text and
 inline elements are set after `set page()` and will respect margins and
 the flow of text and document elements.
 
+You can use the `background:` to set an element anywhere on the page
+while `header:` and `footer:` are meant for elements at the top or
+bottom.
+
 #### header
 
 `set page(header: ...)` is where you determine what appears in the
@@ -116,14 +132,65 @@ subsequent pages.
                                    top-edge: "cap-height",
                                    bottom-edge: "descender",
                                    align(right, title))])
-                   ]}
+                   ]})
 
 #### footer
 
+Like with the header, you can set elements in the page footer
+dynamically or statically with `set page(header: ...)`.
+
+    set page(footer: context [
+
+                  // add department name ----
+                  #place(bottom + left,
+                          dx: -0.4in,
+                          dy: -0.05in,
+                          block(width: 5in,
+                                height: 0.5in,
+                                inset: 0.1in)[
+                                    #text(weight: "bold",
+                                          size: 14pt,
+                                          fill: rgb("fefefe"),
+                                          font: title_font,
+                                          top-edge: "cap-height",
+                                          bottom-edge: "descender")[#department]])
+
+                   // add page counter. First specify text and then specify placement ----
+                   #set text(size: 11pt,
+                             fill: rgb("fefefe"),
+                             font: title_font,
+                             top-edge: "cap-height",
+                             bottom-edge: "descender")
+                   #place(bottom + right,
+                          dx: 0in,
+                          dy: -0.18in,
+                          counter(page).display("1 of 1", both: true))
+
+                    ])
+
 #### background
+
+You can use the same functions for `background:` as you can for
+`header:` and `footer:`. Here we place a teal colored bar horizontally
+across the first page of our document. The bar will start 0.95 inches
+from the top, will be 0.1 inches tall and will span the whole page:
+
+    set page(background: context {
+                if counter(page).get().first() > 1 [
+
+                       #place(center + top,
+                              dx: 0in,
+                              dy: 0.95in,
+                              rect(width: 8.5in,
+                                   height: 0.1in,
+                                   fill: rgb("38939b")))
+
+               ]})
 
 ### placing objects
 
-### text: headings
+### text
 
-### text: body
+#### headings
+
+#### body
