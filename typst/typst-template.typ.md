@@ -189,6 +189,25 @@ from the top, will be 0.1 inches tall and will span the whole page:
 
 ### placing objects
 
+The `place()` function is an easy way to arrange objects on your page. A
+couple things to note:
+
+- If you use `place()` within another function, like `set page()`, you
+  should put a `#` in front of the function: `#place`.
+
+<!-- -->
+
+    set page(header: context[
+                      #place(top + left,
+                             ....)])
+
+- If you place an object within `set page()` it will not respect the
+  margins you specify. If you use `place()` after `set page()` it will
+  place objects relative to the margins.
+
+[Documentation](https://typst.app/docs/reference/layout/place/) for
+`place()` goes through additional options with `place()`
+
 ### text
 
 #### headings
