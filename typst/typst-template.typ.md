@@ -3,9 +3,6 @@ Beth Jump
 2025-04-11
 
 - [Overview](#overview)
-  - [Of note](#of-note)
-    - [`set()` vs `show()`](#set-vs-show)
-    - [`block()` vs `box()`](#block-vs-box)
 - [Document defaults](#document-defaults)
 - [Page settings](#page-settings)
   - [set page()](#set-page)
@@ -13,6 +10,8 @@ Beth Jump
     - [footer](#footer)
     - [background](#background)
   - [placing objects](#placing-objects)
+  - [set vs show](#set-vs-show)
+  - [block vs box](#block-vs-box)
   - [text](#text)
     - [headings](#headings)
     - [body](#body)
@@ -27,7 +26,7 @@ Broadly speaking the `typst-template.typ` has two parts:
 
 1.  document defaults (`# let doc()`): here you set document defaults
     and reference parameters from the Quarto template YAML.  
-2.  page settings (`= {...}` after `# let doc`): this is where you can
+2.  page settings (the `= {...}` after `# let doc`): here you can
     specify page defaults, how elements appear and the general flow of
     elements in the document.
 
@@ -38,7 +37,6 @@ General outline of a template:
         paper: "us-letter",
         ...
     ) = {
-
         set page(paper: paper,
                  header: context{...})
                  
@@ -49,12 +47,6 @@ General outline of a template:
         set text(...)
     }
 
-### Of note
-
-#### `set()` vs `show()`
-
-#### `block()` vs `box()`
-
 ## Document defaults
 
 At the top of your `typst-template.typ`, you use the `# let` function to
@@ -64,6 +56,8 @@ can be referenced later on in the template.
 
 If you want to add a custom value to your document, like `timeframe`,
 you need to also add it to the Quarto YAML and the `typst-show.typ`.
+
+Here’s an example of how this part of a `typst-template.typ` might look:
 
     #let doc(
       title: none,
@@ -216,6 +210,34 @@ couple things to note:
 
 Documentation for `place()` is
 [here](https://typst.app/docs/reference/layout/place/).
+
+### set vs show
+
+Typst has some great documentation about [`set` vs
+`show`](https://typst.app/docs/reference/styling/) - check that out for
+details.
+
+At a high level:
+
+`set`: calls a function and allows you to use parameters within that
+function to customize an element. For example: `set text()` allows you
+to set text according to the parameters available to the `text()`
+function.
+
+`show`: allows you to customize an element with additional parameters
+not available to the function you’re using. For example, text parameters
+aren’t available in the `heading()` function, so you can use a `show`
+rule and `set text` with the `heading()` function to change the heading
+appearance:
+
+    show heading.where(level:1): set text(weight: "bold")
+
+### block vs box
+
+This
+[book](https://sitandr.github.io/typst-examples-book/book/basics/must_know/box_block.html)
+goes over the differences but essentially `box()` lets you place things
+in line with text while `block()` creates a new paragraph.
 
 ### text
 
