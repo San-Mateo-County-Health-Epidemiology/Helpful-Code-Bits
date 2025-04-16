@@ -3,6 +3,9 @@ Beth Jump
 2025-04-11
 
 - [Overview](#overview)
+  - [Of note](#of-note)
+    - [`set()` vs `show()`](#set-vs-show)
+    - [`block()` vs `box()`](#block-vs-box)
 - [Document defaults](#document-defaults)
 - [Page settings](#page-settings)
   - [set page()](#set-page)
@@ -45,6 +48,12 @@ General outline of a template:
         linebreak()
         set text(...)
     }
+
+### Of note
+
+#### `set()` vs `show()`
+
+#### `block()` vs `box()`
 
 ## Document defaults
 
@@ -205,11 +214,38 @@ couple things to note:
   margins you specify. If you use `place()` after `set page()` it will
   place objects relative to the margins.
 
-[Documentation](https://typst.app/docs/reference/layout/place/) for
-`place()` goes through additional options with `place()`
+Documentation for `place()` is
+[here](https://typst.app/docs/reference/layout/place/).
 
 ### text
 
 #### headings
 
+You can specify how headings appear in your final document using
+`show heading.where(level:n)`. where n is the heading level. The heading
+levels are off from the number of `#`’s by 1, so a heading denoted with
+`##` is a level 1 heading, `###` is a level 2 heading, etc.
+
+This is an example of how to format your level 1 (`## Heading Level 1`)
+headings:
+
+    show heading.where(level:1): set text(weight: "bold",
+                                          size: 14pt,
+                                          fill: rgb("000000"),
+                                          font: font,
+                                          top-edge: "ascender",
+                                          bottom-edge: "descender")
+
 #### body
+
+Use `set par()` and `set text()` to specify how regular text appear in
+your report. See additional information for
+[`set par()`](https://typst.app/docs/reference/model/par/#parameters)
+and [`set text()`](https://typst.app/docs/reference/text/text/)
+
+Here is an example of how to format your text:
+
+    set par(justify: false,
+            leading: 0.5em)
+    set text(font: font,
+             size: fontsize)
