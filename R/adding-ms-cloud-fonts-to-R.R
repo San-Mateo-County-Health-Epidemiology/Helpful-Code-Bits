@@ -15,7 +15,7 @@ library(ggplot2) # for testing fonts
 ## 2. Open C:/Users/<username>/AppData/Local/Microsoft/FontCache/4/CloudFonts and find Trade Gothic Next Rounded. You probably need to type this path in as AppData and the other folders don't typically show up as icons
 ## 3. Open the Trade Gothic Next Rounded folder. 
 ## - If the Trade Gothic Next Rounded folder is not there, open a Microsoft application and access Trade Gothic Next Rounded in that application. Then go back and you should see the folder.
-## 4. In the folder there should be at least one .ttf file. Open the file(s) until you find the one for Trade Gothic Next Rounded (not bold or italic). Manually that .ttf file to "TradeGothicNextRounded" (this is the string you'll search for in the `font_import(pattern = "")`).
+## 4. In the folder there should be at least one .ttf file. Open the file(s) until you find the one for Trade Gothic Next Rounded (not bold or italic). Manually rename that .ttf file to "TradeGothicNextRounded" (this is the string you'll search for in the `font_import(pattern = "")`).
 ## 5. Open the file you renamed and click "install" in the upper left corner.
 ## 6. Go back to C:/Windows/Fonts and verify Trade Gothic Next Rounded is there
 
